@@ -6,7 +6,7 @@ Easy to use reordering of favourites for Kodi in a small package.
 
 
 # Instructions
-Open the addon to access the menu.
+Open the add-on to access the menu.
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/menu.png)
 
@@ -18,17 +18,17 @@ Click on the favourite to be moved which will change colour.
 
 Then click on the favourite where it needs to go and it will move.
 
-Multiple changes can be made to different favourites or an individual favourite. ("Start Again" can be used to cancel changes made in error without exiting the user interface and addon. Favourites reload in the original order).
+Multiple changes can be made to different favourites or an individual favourite. ("Start Again" can be used to cancel changes made in error without exiting the user interface and add-on. Favourites reload in the original order).
 
 Click on the "Close" button to return to the menu.
 
 Choose from one of the three menu options:
 
-Exit Only - no changes saved and exits the addon. Favourites remain in the original order.
+Exit Only - no changes saved and exits the add-on. Favourites remain in the original order.
 
-Save + Exit - changes saved and exits the addon. Exit and restart Kodi for the changes to take effect. Do not make further changes until Kodi is restarted.
+Save + Exit - changes saved and exits the add-on. Exit and restart Kodi for the changes to take effect. Do not make further changes until Kodi is restarted.
 
-Save + Reload - changes saved and exits the addon. Kodi profile reloads (and changes to favourites). Do not make further changes until the profile reloads.'
+Save + Reload - changes saved and exits the add-on. Kodi profile reloads (and changes to favourites). Do not make further changes until the profile reloads.'
 
 
 # Notes
@@ -64,9 +64,9 @@ Reorder Favourites will be maintained for new releases of Kodi and changes to Py
 # Can you help ?
 There is a slight niggle with some thumbnails.
 
-Reorder Favourites displays a default X image where a thumbnail is unavailable. Thumbnail availability appears to be dependent on the addon it is sourced from.
+Reorder Favourites displays a default X image where a thumbnail is unavailable. Thumbnail availability appears to be dependent on the add-on it is sourced from.
 
-Rumble and iPlayer WWW addons work fine but viwX doesn't. The viwX thumbnails display in Kodi favourites but are unavailable to the Reorder Favourites interface.
+Rumble and iPlayer WWW add-ons work fine but viwX doesn't. The viwX thumbnails display in Kodi favourites but are unavailable to the Reorder Favourites interface.
 
 Please contact me if you can help in resolving this or explain why (Kodi logs may help).
 
@@ -79,7 +79,7 @@ The code and files of this add-on are free for use, subject to crediting Code-E-
 
 
 # Alternatives to Reorder Favourites
-Several other Kodi addons relating to favourites exist (including):
+Several other Kodi add-ons relating to favourites exist (including):
 
 Order Favourites by doko-desuka:<br/>https://github.com/doko-desuka/plugin.program.orderfavourites
 
