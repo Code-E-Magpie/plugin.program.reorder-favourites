@@ -38,7 +38,7 @@ Up to two lines of fixed text displayed below an image (from start of favourite 
 
 Up to three lines of scrolling text displayed when the cursor is on an image (from start to end of favourite text).
 
-"Save + Reload" may crash Kodi if there is a large number of favourites (i.e. large favourites.xml file). Profile reload automatically runs Kodi startup.'
+"Save + Reload" may crash Kodi if there is a large number of favourites (i.e. large favourites.xml file). Profile reload automatically runs Kodi startup.
 
 
 # Development
