@@ -1,4 +1,4 @@
-# Kodi plugin program Reorder Favourites
+# Reorder Favourites for Kodi
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/resources/media/icon.png)
 
