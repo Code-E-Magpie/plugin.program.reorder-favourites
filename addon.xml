@@ -1,5 +1,5 @@
 <?xml version = "1.0" encoding = "UTF-8" standalone = "yes"?>
-<addon id = "plugin.program.reorder-favourites" name = "Reorder Favourites" version = "1.2.4" provider-name = "[B][COLOR silver]C[COLOR dimgray]o[/COLOR]d[COLOR dimgray]e[/COLOR]-[COLOR dimgray]E[/COLOR]-[COLOR dimgray]M[/COLOR]a[COLOR dimgray]g[/COLOR]p[COLOR dimgray]i[/COLOR]e[/COLOR][/B]">
+<addon id = "plugin.program.reorder-favourites" name = "Reorder Favourites" version = "1.5.0" provider-name = "[B][COLOR silver]C[COLOR dimgray]o[/COLOR]d[COLOR dimgray]e[/COLOR]-[COLOR dimgray]E[/COLOR]-[COLOR dimgray]M[/COLOR]a[COLOR dimgray]g[/COLOR]p[COLOR dimgray]i[/COLOR]e[/COLOR][/B]">
 	<requires>
 		<import addon = "xbmc.python" version = "3.0.0"/>
 	</requires>
@@ -15,12 +15,9 @@ Please read the Instructions before use.
 Please see the Changelog to see what is new.
 [/COLOR]
 [COLOR darkgray]
-To view the Instructions and the Changelog see the
-User Information.
-
-To view the User Information:
+To view the Instructions and the Changelog:
 open the add-on to access the menu and click on
-"U s e r   I n f o r m a t i o n  >".
+'U s e r   I n f o r m a t i o n  >'
 [/COLOR]
 [COLOR silver]
 IMPORTANT:
