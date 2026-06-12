@@ -10,7 +10,7 @@ Open the add-on to access the menu.
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/menu.png)
 
-Click on "R e o r d e r&nbsp;&nbsp;&nbsp;F a v o u r i t e s" to open the user interface.
+Click on 'R e o r d e r&nbsp;&nbsp;&nbsp;F a v o u r i t e s' to open the user interface.
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/interface.png)
 
@@ -18,9 +18,9 @@ Click on the favourite to be moved which will change colour.
 
 Then click on the favourite where it needs to go and it will move.
 
-Multiple changes can be made to different favourites or an individual favourite. ("Start Again" can be used to cancel changes made in error without exiting the user interface and add-on. Favourites reload in the original order).
+Multiple changes can be made to different favourites or an individual favourite. ('Start Again' can be used to cancel changes made in error without exiting the user interface and add-on. Favourites reload in the original order).
 
-Click on the "Close" button to return to the menu.
+Click on the 'Close' button to return to the menu.
 
 Choose from one of the three menu options:
 
@@ -38,7 +38,7 @@ Up to two lines of fixed text displayed below an image (from start of favourite 
 
 Up to three lines of scrolling text displayed when the cursor is on an image (from start to end of favourite text).
 
-"Save + Reload" may crash Kodi if there is a large number of favourites (i.e. large favourites.xml file). Profile reload automatically runs Kodi startup.
+'Save + Reload' may crash Kodi if there is a large number of favourites (i.e. large favourites.xml file). Profile reload automatically runs Kodi startup.
 
 
 # Development
