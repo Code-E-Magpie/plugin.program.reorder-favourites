@@ -19,7 +19,7 @@
             <animation effect="fade" time="300">VisibleChange</animation>
             <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-            <texture border="2">loguploader-black.png</texture>
+            <texture border="2">background.png</texture>
         </control>
 
         <!-- Inactive Background Button (avoids accidental closing) -->
@@ -55,7 +55,7 @@
             <left>0</left>
             <width>1920</width>
             <height>1005</height>
-            <texture>loguploader-black.png</texture>
+            <texture>background.png</texture>
         </control>
 
         <!-- Content Panel -->
