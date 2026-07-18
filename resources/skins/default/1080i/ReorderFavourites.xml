@@ -40,11 +40,10 @@
             <description>Header</description>
             <top>0</top>
             <width>1920</width>
-            <height>80</height>
+            <height>75</height>
             <align>center</align>
             <aligny>center</aligny>
             <font>font13</font>
-            <label>[COLOR yellow][B]R e o r d e r   F a v o u r i t e s[/B][/COLOR]</label>
         </control>
 
         <!-- Content Panel Background Image -->
@@ -118,7 +117,7 @@
                 <aligny>top</aligny>
                 <font>font10</font>
                 <label>$INFO[ListItem.Label]</label>
-                <visible>!String.IsEqual(ListItem.DBType,album)</visible>
+                <visible>!String.IsEqual(ListItem.DBType, album)</visible>
             </control>
             </itemlayout>
 
@@ -155,7 +154,7 @@
                 <autoscroll delay="1000" time="1000" repeat="2000"></autoscroll>
                 <font>font10</font>
                 <label>$INFO[ListItem.Label]</label>
-                <visible>!String.IsEqual(ListItem.DBType,album)</visible>
+                <visible>!String.IsEqual(ListItem.DBType, album)</visible>
             </control>
 
             <!-- Cursor Favourite Highlighted (Cursor On Top) -->
@@ -201,8 +200,6 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>font13</font>
-            <label>[B]C l o s e[/B]</label>
-            <textcolor>FFC0C0C0</textcolor>
             <textoffsetx>10</textoffsetx>
             <texturefocus colordiffuse="FFFFFF00">frame_V_grey.png</texturefocus>
             <texturenofocus>frame_V_black_dim.png</texturenofocus>
@@ -219,13 +216,34 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>font13</font>
-            <label>[B]S t a r t[CR][CR]A g a i n[/B]</label>
-            <textcolor>FFC0C0C0</textcolor>
             <textoffsetx>10</textoffsetx>
             <texturefocus colordiffuse="FFFFFF00">frame_V_grey.png</texturefocus>
             <texturenofocus>frame_V_black_dim.png</texturenofocus>
             <onup>8500</onup>
             <onleft>8400</onleft>
+        </control>
+
+        <!-- Dummy Button (Image + Text) -->
+        <control type="image" id="8502">
+            <description>Dummy Button - Image</description>
+            <top>750</top>
+            <left>1600</left>
+            <width>290</width>
+            <height>325</height>
+            <texture>frame_V_black_dim.png</texture>
+        </control>
+
+        <control type="label" id="8502">
+            <description>Dummy Button - Favourite Text</description>
+            <top>775</top>
+            <left>1630</left>
+            <width>230</width>
+            <height>275</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font13</font>
+            <label fallback="[COLOR dimgray][B]F a v o u r i t e[CR][CR]T e x t[/B][/COLOR]" background="true">$INFO[ListItem.Label]</label>
+            <wrapmultiline>true</wrapmultiline>
         </control>
 
         </control>
