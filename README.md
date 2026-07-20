@@ -1,23 +1,3 @@
-https://github.com/Code-E-Magpie/plugin.program.reorder-favourites
-
-
-
-
-
-
-
-
-
-ABOUT
-Easy to use reordering of favourites for Kodi. Please read the Instructions before use and see the Changelog to see what is new. To view the Instructions and the Changelog: open the add-on to access the menu and click on 'User Information >'
-
-
-
-https://github.com/Code-E-Magpie/repository.magpie
-
-
-
-
 # Reorder Favourites for Kodi
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/resources/media/icon.png)
