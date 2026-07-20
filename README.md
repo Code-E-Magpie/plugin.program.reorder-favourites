@@ -10,7 +10,7 @@ Open the add-on to access the menu.
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/menu.png)
 
-Click on 'U s e r&nbsp;&nbsp;&nbsp;I n f o r m a t i o n' to open the user interface.
+Click on 'U s e r&nbsp;&nbsp;&nbsp;I n t e r f a c e' to open the user interface.
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/interface.png)
 
