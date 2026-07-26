@@ -41,7 +41,7 @@ Up to three lines of scrolling text displayed when the cursor is on an image (fr
 'Save + Reload' may crash Kodi if there is a large number of favourites (i.e. large favourites.xml file). Profile reload automatically runs Kodi startup.
 
 
-# Development
+# Development environment
 Kodi v21.3 Omega apk (Android app) with Confluence skin as default (including default font).
 
 Tablet (1340 x 800 aspect ratio 5:3) running Android 14 using QuickEdit apk (TryItAndSee / LearnAsYouGo iterative development and testing).
