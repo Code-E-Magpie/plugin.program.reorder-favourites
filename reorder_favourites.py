@@ -60,20 +60,14 @@ TEXT_VALUE = ADDON.getSetting('TEXT_VALUE')
 THUMBNAILS_FORMAT = 'special://thumbnails/{folder}/{file}'
 
 # ============================================================
-# Addon_ID_Version / Addon_Title / Dialogue / Log_Title
+# Addon_ID_Version / Addon_Title / Dialogue / Favourites / Log_Title
 # ============================================================
 
 Addon_ID_Version = ('[COLOR %s]%s [/COLOR][COLOR %s] %s[/COLOR]' % (TEXT_ITEM, ADDON_ID, TEXT_VALUE, ADDON_VERSION))
 Addon_Title = ('[COLOR %s]%s[/COLOR]' % (TEXT_ADDON, ' '.join((ADDON_NAME).strip(' '))))
 Dialogue = xbmcgui.Dialog()
-Log_Title = ('[COLOR %s]%s [/COLOR]' % (TEXT_ADDON, ADDON_NAME))
-
-# ============================================================
-# Favourites / Interface
-# ============================================================
-
 Favourites = ('[COLOR %s]favourites > [/COLOR]' % TEXT_GENERAL)
-Interface = ('[COLOR %s]interface > [/COLOR]' % TEXT_GENERAL)
+Log_Title = ('[COLOR %s]%s [/COLOR]' % (TEXT_ADDON, ADDON_NAME))
 
 # ============================================================
 # FUNCTION: Log
@@ -172,7 +166,7 @@ SETTINGS_TEXT = '[CR][CR][CR]%s[CR][CR]Click on \'Reorder Favourites Settings >\
 
 ENVIRONMENT_TEXT = '[CR][CR][CR]%s[CR][CR]Kodi v21.3 Omega apk (Android app) with Confluence skin as default (including default font).[CR]Tablet (1340 x 800 aspect ratio 5:3) running Android 14 using QuickEdit apk (TryItAndSee / LearnAsYouGo iterative development and testing).[CR]Chromecast HD (1280 x 720 aspect ratio 16:9) running Android TV OS version 14 (user testing).[CR]100%% tested and working on Android.[CR]Not tested on other platforms.[CR]Code debugged and reengineered using https://aipy.dev/tools where required.' % ' '.join('DEVELOPMENT ENVIRONMENT')
 
-CHANGELOG_TEXT = '[CR][CR][CR]%s [LIGHT] (newest at the top)[/LIGHT][CR][CR]Version code x.y.z attributes (1.5.0 onwards)[CR]x = major change / y = number of \'>\' menu items / z = minor change[CR][CR]version 2.4.0 (4 menu items & 2 user interface buttons)[CR]- code sourced from Reorder Favourites 1.6.0 by %s (plugin.program.reorder-favourites)[CR]- save and exit options removed from menu[CR]- save and exit options added using dialogue boxes[CR][CR]version 1.6.0 (6 menu items & 2 user interface buttons)[CR]- settings created to customise text colours with billions of text colour combinations[CR]- text colour customisation includes text boxes and user interface buttons[CR]- added favourite and interface row count to user interface header[CR]- added dummy button containing full favourite text to user interface[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR]- minor changes to function names to improve consistency with other add-ons[CR]- logs reworked[CR][CR]version 1.5.1 (5 menu items & 2 user interface buttons)[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR][CR]version 1.5.0 (5 menu items & 2 user interface buttons)[CR]- Textbox.xml background image name change[CR]- minor changes to improve consistency with other add-ons[CR][CR]version 1.2.4 (4 menu items for user interface & 2 user interface buttons)[CR]- menu updated with User Information dialogue box (Instructions / Notes / Development / Changelog)[CR]- menu updated with Developer, Name, Version and Addon ID[CR]- user interface ids in xml renumbered[CR]- user interface remote scrolling within borders[CR]- user interface images and layout improved[CR]- variables and functions reworked[CR]- dialogue boxes and logs reworked[CR]- simplified addon.xml content to reduce maintenance[CR][CR]version 1.0.0 (4 menu items for user interface & 2 user interface buttons)[CR]- code from Order Favourites 1.2.3a by doko-desuka (plugin.program.orderfavourites)[CR]- user interface resized to full screen[CR]- improved layout using new images and default image[CR]- visible scrollbar and resized text[CR]- menu and dialogue boxes reworked[CR]- user instructions added to addon.xml[CR]- icon.png changed and fanart.jpg added' % (' '.join('CHANGELOG'), ADDON_DEVELOPER)
+CHANGELOG_TEXT = '[CR][CR][CR]%s [LIGHT] (newest at the top)[/LIGHT][CR][CR]Version code x.y.z attributes (1.5.0 onwards)[CR]x = major change / y = number of \'>\' menu items / z = minor change[CR][CR]version 2.4.0 (4 menu items & 2 user interface buttons)[CR]- save and exit options removed from menu[CR]- save and exit options added using dialogue boxes[CR][CR]version 1.6.0 (6 menu items & 2 user interface buttons)[CR]- settings created to customise text colours with billions of text colour combinations[CR]- text colour customisation includes text boxes and user interface buttons[CR]- added favourite and interface row count to user interface header[CR]- added dummy button containing full favourite text to user interface[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR]- minor changes to function names to improve consistency with other add-ons[CR]- logs reworked[CR][CR]version 1.5.1 (5 menu items & 2 user interface buttons)[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR][CR]version 1.5.0 (5 menu items & 2 user interface buttons)[CR]- Textbox.xml background image name change[CR]- minor changes to improve consistency with other add-ons[CR][CR]version 1.2.4 (4 menu items for user interface & 2 user interface buttons)[CR]- menu updated with User Information dialogue box (Instructions / Notes / Development / Changelog)[CR]- menu updated with Developer, Name, Version and Addon ID[CR]- user interface ids in xml renumbered[CR]- user interface remote scrolling within borders[CR]- user interface images and layout improved[CR]- variables and functions reworked[CR]- dialogue boxes and logs reworked[CR]- simplified addon.xml content to reduce maintenance[CR][CR]version 1.0.0 (4 menu items for user interface & 2 user interface buttons)[CR]- code from Order Favourites 1.2.3a by doko-desuka (plugin.program.orderfavourites)[CR]- user interface resized to full screen[CR]- improved layout using new images and default image[CR]- visible scrollbar and resized text[CR]- menu and dialogue boxes reworked[CR]- user instructions added to addon.xml[CR]- icon.png changed and fanart.jpg added' % ' '.join('CHANGELOG')
 
 User_Information_Text = '[COLOR %s][B]%s[/B][CR][COLOR %s][LIGHT](Instructions / Notes / Settings / Development Environment / Changelog)[/LIGHT][/COLOR][/COLOR][CR][CR][COLOR %s]%s[/COLOR]' % (TEXT_ITEM, ' '.join('USER INFORMATION'), TEXT_VALUE, TEXT_GENERAL, (INSTRUCTIONS_TEXT + NOTES_TEXT + SETTINGS_TEXT + ENVIRONMENT_TEXT + CHANGELOG_TEXT))
 
@@ -346,7 +340,7 @@ class ReorderFavourites(xbmcgui.WindowXMLDialog):
 			self.panel.reset()
 			self.panel.addItems(self.allItems)
 
-			Log(Log_Title + Interface + '[COLOR %s][LIGHT]Start Again[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
+			Log(Log_Title + Favourites + '[COLOR %s][LIGHT]Start Again[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
 
 #####################################################################################
 
