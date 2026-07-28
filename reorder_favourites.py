@@ -69,12 +69,11 @@ Dialogue = xbmcgui.Dialog()
 Log_Title = ('[COLOR %s]%s [/COLOR]' % (TEXT_ADDON, ADDON_NAME))
 
 # ============================================================
-# Favourites / Interface / Menu
+# Favourites / Interface
 # ============================================================
 
 Favourites = ('[COLOR %s]favourites > [/COLOR]' % TEXT_GENERAL)
 Interface = ('[COLOR %s]interface > [/COLOR]' % TEXT_GENERAL)
-Menu = ('[COLOR %s]menu > [/COLOR]' % TEXT_GENERAL)
 
 # ============================================================
 # FUNCTION: Log
@@ -165,7 +164,7 @@ Development_Text = '[CR][CR][CR][COLOR %s][B]%s[/B][CR][COLOR %s][LIGHT](Magpie 
 # FUNCTION: User_Information
 # ============================================================
 
-INSTRUCTIONS_TEXT = '%s[CR][CR]Open the add-on to access the menu.[CR]Click on \'User Interface >\' to open the user interface.[CR][CR]Click on the favourite to be moved which will change colour.[CR]Then click on the favourite where it needs to go and it will move.[CR]Multiple changes can be made to different favourites or an individual favourite.[CR]\'Start Again\' can be used to cancel changes made in error without exiting the user interface. Favourites reload in the original order.[CR][CR]Click on the \'Close\' button to exit the user interface (changes pending).[CR][CR]Choose from one of the three menu options:[CR]Exit Only - no changes saved and exits the add-on. Favourites remain in the original order.[CR]Save + Exit - changes saved and exits the add-on. Exit and restart Kodi for the changes to take effect. Do not make further changes until Kodi is restarted.[CR]Save + Reload - changes saved and exits the add-on. Kodi profile reloads (and changes to favourites). Do not make further changes until the profile reloads.' % ' '.join('INSTRUCTIONS')
+INSTRUCTIONS_TEXT = '%s[CR][CR]Open the add-on to access the menu.[CR]Click on \'User Interface >\' to open the user interface.[CR][CR]Click on the favourite to be moved which will change colour.[CR]Then click on the favourite where it needs to go and it will move.[CR]Multiple changes can be made to different favourites or an individual favourite.[CR]\'Start Again\' can be used to cancel changes made in error without exiting the user interface. Favourites reload in the original order.[CR][CR]Click on the \'Close\' button to exit the user interface (changes pending). Follow the exit and save option dialogue boxes.[CR][CR]Choose from one of the exit options:[CR]Exit Only - no changes saved and exits. Favourites remain in the original order.[CR]Save Changes - save options dialogue box (changes pending).[CR][CR]Choose from one of the save options:[CR]Save + Exit - changes saved and exits the add-on. Exit and restart Kodi for the changes to take effect. Do not make further changes until Kodi is restarted.[CR]Save + Reload - changes saved and exits the add-on. Kodi profile reloads (and changes to favourites). Do not make further changes until the profile reloads.' % ' '.join('INSTRUCTIONS')
 
 NOTES_TEXT = '[CR][CR][CR]%s[CR][CR]Default X image displayed where thumbnail is unavailable.[CR]Up to two lines of fixed text displayed below an image (from start of favourite text).[CR]Up to three lines of scrolling text displayed when the cursor is on an image (from start to end of favourite text).[CR]\'Save + Reload\' may crash Kodi if there is a large number of favourites (i.e. large favourites.xml file). Profile reload automatically runs Kodi startup.' % ' '.join('NOTES')
 
@@ -173,7 +172,7 @@ SETTINGS_TEXT = '[CR][CR][CR]%s[CR][CR]Click on \'Reorder Favourites Settings >\
 
 ENVIRONMENT_TEXT = '[CR][CR][CR]%s[CR][CR]Kodi v21.3 Omega apk (Android app) with Confluence skin as default (including default font).[CR]Tablet (1340 x 800 aspect ratio 5:3) running Android 14 using QuickEdit apk (TryItAndSee / LearnAsYouGo iterative development and testing).[CR]Chromecast HD (1280 x 720 aspect ratio 16:9) running Android TV OS version 14 (user testing).[CR]100%% tested and working on Android.[CR]Not tested on other platforms.[CR]Code debugged and reengineered using https://aipy.dev/tools where required.' % ' '.join('DEVELOPMENT ENVIRONMENT')
 
-CHANGELOG_TEXT = '[CR][CR][CR]%s [LIGHT] (newest at the top)[/LIGHT][CR][CR]Version code x.y.z attributes (1.5.0 onwards)[CR]x = major change / y = number of \'>\' menu items / z = minor change[CR][CR]version 1.6.0 (6 menu items & 2 user interface buttons)[CR]- settings created to customise text colours with billions of text colour combinations[CR]- text colour customisation includes text boxes and user interface buttons[CR]- added favourite and interface row count to user interface header[CR]- added dummy button containing full favourite text to user interface[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR]- minor changes to function names to improve consistency with other add-ons[CR]- logs reworked[CR][CR]version 1.5.1 (5 menu items & 2 user interface buttons)[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR][CR]version 1.5.0 (5 menu items & 2 user interface buttons)[CR]- Textbox.xml background image name change[CR]- minor changes to improve consistency with other add-ons[CR][CR]version 1.2.4 (4 menu items for user interface & 2 user interface buttons)[CR]- menu updated with User Information dialogue box (Instructions / Notes / Development / Changelog)[CR]- menu updated with Developer, Name, Version and Addon ID[CR]- user interface ids in xml renumbered[CR]- user interface remote scrolling within borders[CR]- user interface images and layout improved[CR]- variables and functions reworked[CR]- dialogue boxes and logs reworked[CR]- simplified addon.xml content to reduce maintenance[CR][CR]version 1.0.0 (4 menu items for user interface & 2 user interface buttons)[CR]- code from Order Favourites 1.2.3a by doko-desuka (plugin.program.orderfavourites)[CR]- user interface resized to full screen[CR]- improved layout using new images and default image[CR]- visible scrollbar and resized text[CR]- menu and dialogue boxes reworked[CR]- user instructions added to addon.xml[CR]- icon.png changed and fanart.jpg added' % ' '.join('CHANGELOG')
+CHANGELOG_TEXT = '[CR][CR][CR]%s [LIGHT] (newest at the top)[/LIGHT][CR][CR]Version code x.y.z attributes (1.5.0 onwards)[CR]x = major change / y = number of \'>\' menu items / z = minor change[CR][CR]version 2.4.0 (4 menu items & 2 user interface buttons)[CR]- code sourced from Reorder Favourites 1.6.0 by %s (plugin.program.reorder-favourites)[CR]- save and exit options removed from menu[CR]- save and exit options added using dialogue boxes[CR][CR]version 1.6.0 (6 menu items & 2 user interface buttons)[CR]- settings created to customise text colours with billions of text colour combinations[CR]- text colour customisation includes text boxes and user interface buttons[CR]- added favourite and interface row count to user interface header[CR]- added dummy button containing full favourite text to user interface[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR]- minor changes to function names to improve consistency with other add-ons[CR]- logs reworked[CR][CR]version 1.5.1 (5 menu items & 2 user interface buttons)[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR][CR]version 1.5.0 (5 menu items & 2 user interface buttons)[CR]- Textbox.xml background image name change[CR]- minor changes to improve consistency with other add-ons[CR][CR]version 1.2.4 (4 menu items for user interface & 2 user interface buttons)[CR]- menu updated with User Information dialogue box (Instructions / Notes / Development / Changelog)[CR]- menu updated with Developer, Name, Version and Addon ID[CR]- user interface ids in xml renumbered[CR]- user interface remote scrolling within borders[CR]- user interface images and layout improved[CR]- variables and functions reworked[CR]- dialogue boxes and logs reworked[CR]- simplified addon.xml content to reduce maintenance[CR][CR]version 1.0.0 (4 menu items for user interface & 2 user interface buttons)[CR]- code from Order Favourites 1.2.3a by doko-desuka (plugin.program.orderfavourites)[CR]- user interface resized to full screen[CR]- improved layout using new images and default image[CR]- visible scrollbar and resized text[CR]- menu and dialogue boxes reworked[CR]- user instructions added to addon.xml[CR]- icon.png changed and fanart.jpg added' % (' '.join('CHANGELOG'), ADDON_DEVELOPER)
 
 User_Information_Text = '[COLOR %s][B]%s[/B][CR][COLOR %s][LIGHT](Instructions / Notes / Settings / Development Environment / Changelog)[/LIGHT][/COLOR][/COLOR][CR][CR][COLOR %s]%s[/COLOR]' % (TEXT_ITEM, ' '.join('USER INFORMATION'), TEXT_VALUE, TEXT_GENERAL, (INSTRUCTIONS_TEXT + NOTES_TEXT + SETTINGS_TEXT + ENVIRONMENT_TEXT + CHANGELOG_TEXT))
 
@@ -320,9 +319,11 @@ class ReorderFavourites(xbmcgui.WindowXMLDialog):
 # ============================================================
 
 	def onInit(self):
+
 		header = '[B]%s[/B][CR][COLOR %s]Favourites: [COLOR %s]%s  [/COLOR][LIGHT]Rows: [COLOR %s]%s[/COLOR][/LIGHT][/COLOR]' % (Addon_Title, TEXT_ITEM, TEXT_VALUE, Count_Favourites(FAVOURITES), TEXT_VALUE, math.ceil(Count_Favourites(FAVOURITES)/5))
 		close = '[COLOR %s][B]%s[/B][/COLOR]' % (TEXT_GENERAL, ' '.join('Close'))
 		start_again = '[COLOR %s][B]%s[CR][CR]%s[/B][/COLOR]' % (TEXT_GENERAL, ' '.join('Start'), ' '.join('Again'))
+
 		self.title = self.getControl(8200).setLabel(header)
 		self.panel = self.getControl(8320)
 		self.panel.reset()
@@ -336,6 +337,7 @@ class ReorderFavourites(xbmcgui.WindowXMLDialog):
 # ============================================================
 
 	def startAgain(self):
+
 		# Reload favourites in the original order.
 		if Dialogue.yesno(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Start Again)[/LIGHT][CR]Start again ?[CR][COLOR %s]Any changes will be lost.[CR]Favourites will be reloaded in the original order.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_DIM), yeslabel = ('[COLOR %s]Start Again[/COLOR]' % TEXT_VALUE), nolabel = ('[COLOR %s]Cancel[/COLOR]' % TEXT_HIGHLIGHT)):
 
@@ -343,6 +345,7 @@ class ReorderFavourites(xbmcgui.WindowXMLDialog):
 			self.allItems = sorted(self.allItems, key = lambda listitem: int(listitem.getProperty('index')))
 			self.panel.reset()
 			self.panel.addItems(self.allItems)
+
 			Log(Log_Title + Interface + '[COLOR %s][LIGHT]Start Again[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
 
 #####################################################################################
@@ -455,16 +458,27 @@ def Window_Property_Set(prop, data):
 
 # ============================================================
 # ------------------------------------------------------------
-# Menu Entry Point
+# Exit Options
 # ------------------------------------------------------------
 # ============================================================
 
-if '/Addon_Header' in PLUGIN_URL:
-	ADDON.openSettings()
+# ============================================================
+# FUNCTION: Exit_Only
+# ============================================================
 
+def Exit_Only():
 
-elif '/User_Interface' in PLUGIN_URL:
-	Log(Log_Title + Menu + '[COLOR %s][LIGHT]User Interface (Open)[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
+	Window_Property_Clear(FAVOURITES_RESULT)
+	xbmc.executebuiltin('Action(Back)')
+	Log(Log_Title + Favourites + '[COLOR %s][LIGHT]Finished (Exit Only)[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
+
+# ============================================================
+# FUNCTION: Reorder_Favourites
+# ============================================================
+
+def Reorder_Favourites():
+
+	Log(Log_Title + Favourites + '[COLOR %s][LIGHT]Started[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
 	User_Interface = ReorderFavourites('ReorderFavourites.xml', ADDON.getAddonInfo('path'), 'default', '1080i')
 
 	try:
@@ -472,22 +486,30 @@ elif '/User_Interface' in PLUGIN_URL:
 		Window_Property_Set(FAVOURITES_RESULT, result)
 
 	except Exception as e:
-		Log(Log_Title + Menu + 'User Interface: exception[CR]%s' % str(e), xbmc.LOGERROR)
+		Log(Log_Title + Favourites + 'User Interface: exception[CR]%s' % str(e), xbmc.LOGERROR)
 
 		Window_Property_Clear(FAVOURITES_RESULT)
 
 	finally:
+		if Dialogue.yesno(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Exit Options)[/LIGHT][CR]Save changes ?[CR][COLOR %s] > Save Changes: Save Options for pending changes.[CR] > Exit Only: Changes will be lost.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_DIM), yeslabel = ('[COLOR %s]Save Changes[/COLOR]' % TEXT_VALUE), nolabel = ('[COLOR %s]Exit Only[/COLOR]' % TEXT_HIGHLIGHT)):
+
+			if Dialogue.yesno(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Save Options)[/LIGHT][CR]Save + Reload or Save + Exit ?[CR][COLOR %s] > Save + Reload: Changes saved and profile reloads.[CR] > Save + Exit: Changes saved and restart required.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_DIM), yeslabel = ('[COLOR %s]Save + Reload[/COLOR]' % TEXT_VALUE), nolabel = ('[COLOR %s]Save + Exit[/COLOR]' % TEXT_HIGHLIGHT)):
+				
+				Save_Reload()
+
+			else:
+				Save_Exit()
+
+		else:
+			Exit_Only()
+
 		del User_Interface
-		Log(Log_Title + Interface + '[COLOR %s][LIGHT]Close[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
 
+# ============================================================
+# FUNCTION: Save_Exit
+# ============================================================
 
-elif '/Exit_Only' in PLUGIN_URL:
-	Window_Property_Clear(FAVOURITES_RESULT)
-	xbmc.executebuiltin('Action(Back)')
-	Log(Log_Title + Menu + '[COLOR %s][LIGHT]Finished (Exit Only)[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
-
-
-elif '/Save_Exit' in PLUGIN_URL:
+def Save_Exit():
 
 	try:
 		if Save_Favourites(Window_Property_Get(FAVOURITES_RESULT)):
@@ -496,12 +518,15 @@ elif '/Save_Exit' in PLUGIN_URL:
 		xbmc.executebuiltin('Action(Back)')
 
 	except Exception as e:
-		Log(Log_Title + Menu + 'Save + Exit: exception[CR]%s' % str(e), xbmc.LOGERROR)
+		Log(Log_Title + Favourites + 'Save + Exit: exception[CR]%s' % str(e), xbmc.LOGERROR)
 
-	Log(Log_Title + Menu + '[COLOR %s][LIGHT]Finished (Save + Exit)[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
+	Log(Log_Title + Favourites + '[COLOR %s][LIGHT]Finished (Save + Exit)[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
 
+# ============================================================
+# FUNCTION: Save_Reload
+# ============================================================
 
-elif '/Save_Reload' in PLUGIN_URL:
+def Save_Reload():
 
 	try:
 		if not Save_Favourites(Window_Property_Get(FAVOURITES_RESULT)):
@@ -509,22 +534,37 @@ elif '/Save_Reload' in PLUGIN_URL:
 
 		else:
 			Window_Property_Clear(FAVOURITES_RESULT)
-			Dialogue.ok(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Save + Reload)[/LIGHT][CR]Changes to favourites saved.[CR][COLOR %s]Kodi profile reloads (and changes to favourites).[CR]Do not make further changes until the profile reloads.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_VALUE))
+
+			Dialogue.ok(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Save + Reload)[/LIGHT][CR]Changes to favourites saved.[CR][COLOR %s]Current Kodi profile will reload (and changes to favourites).[CR]Do not make further changes until the profile has reloaded.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_VALUE))
 			xbmc.executebuiltin('LoadProfile(%s)' % xbmc.getInfoLabel('System.ProfileName'))
 
 	except Exception as e:
-		Log(Log_Title + Menu + 'Save + Reload: exception[CR]%s' % str(e), xbmc.LOGERROR)
+		Log(Log_Title + Favourites + 'Save + Reload: exception[CR]%s' % str(e), xbmc.LOGERROR)
 
-	Log(Log_Title + Menu + '[COLOR %s][LIGHT]Finished (Save + Reload)[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
+	Log(Log_Title + Favourites + '[COLOR %s][LIGHT]Finished (Save + Reload)[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
 
+#####################################################################################
+
+# ============================================================
+# ------------------------------------------------------------
+# Entry Point
+# ------------------------------------------------------------
+# ============================================================
+
+if '/Addon_Header' in PLUGIN_URL:
+	ADDON.openSettings()
+
+elif '/User_Interface' in PLUGIN_URL:
+	Reorder_Favourites()
+
+elif '/Exit_Menu' in PLUGIN_URL:
+	xbmc.executebuiltin('Action(Back)')
 
 elif '/User_Information' in PLUGIN_URL:
 	User_Information()
 
-
 else:
 	# Create the menu items.
-	Log(Log_Title + Menu + '[COLOR %s][LIGHT]Started[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
 	xbmcplugin.setContent(PLUGIN_ID, 'files')
 
 	Equals = xbmcgui.ListItem('[COLOR %s]==================================================[/COLOR]' % TEXT_DIM)
@@ -536,14 +576,8 @@ else:
 	User_Interface = xbmcgui.ListItem('[B]%s[/B]' % ' '.join('User Interface >'))
 	User_Interface.setArt({'fanart': REORDER, 'thumb': ADDON_ICON})
 
-	Exit_Only = xbmcgui.ListItem('[COLOR %s]Exit Only: [/COLOR]no changes saved  >' % TEXT_GENERAL)
-	Exit_Only.setArt({'fanart': REORDER, 'thumb': ADDON_ICON})
-
-	Save_Exit = xbmcgui.ListItem('[COLOR %s]Save + Exit: [/COLOR]changes saved + exits  > [COLOR %s] (requires Kodi restart)[/COLOR]' % (TEXT_GENERAL, TEXT_DIM))
-	Save_Exit.setArt({'fanart': REORDER, 'thumb': ADDON_ICON})
-
-	Save_Reload = xbmcgui.ListItem('[COLOR %s]Save + Reload: [/COLOR]changes saved + reloads  > [COLOR %s] (may crash Kodi)[/COLOR]' % (TEXT_GENERAL, TEXT_DIM))
-	Save_Reload.setArt({'fanart': REORDER, 'thumb': ADDON_ICON})
+	Exit_Menu = xbmcgui.ListItem(' '.join('Exit Menu >'))
+	Exit_Menu.setArt({'fanart': REORDER, 'thumb': ADDON_ICON})
 
 	User_Information = xbmcgui.ListItem(' '.join('User Information >'))
 	User_Information.setArt({'fanart': REORDER, 'thumb': ADDON_ICON})
@@ -568,9 +602,7 @@ else:
 			(PLUGIN_URL + 'Addon_Header', Addon_Header, False),
 			(PLUGIN_URL, Equals, False),
 			(PLUGIN_URL + 'User_Interface', User_Interface, False),
-			(PLUGIN_URL + 'Exit_Only', Exit_Only, False),
-			(PLUGIN_URL + 'Save_Exit', Save_Exit, False),
-			(PLUGIN_URL + 'Save_Reload', Save_Reload, False),
+			(PLUGIN_URL + 'Exit_Menu', Exit_Menu, False),
 			(PLUGIN_URL, Equals, False),
 			(PLUGIN_URL + 'User_Information', User_Information, False),
 			(PLUGIN_URL, Equals, False),
