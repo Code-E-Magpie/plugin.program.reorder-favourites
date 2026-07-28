@@ -20,12 +20,7 @@ Then click on the favourite where it needs to go and it will move.
 
 Multiple changes can be made to different favourites or an individual favourite. ('Start Again' can be used to cancel changes made in error without exiting the user interface and add-on. Favourites reload in the original order).
 
-Click on the 'Close' button to exit the user interface (changes pending). Follow the exit and save option dialogue boxes.
-
-Choose from one of the exit options:<br/>Exit Only - no changes saved and exits. Favourites remain in the original order.
-<br/>Save Changes - save options dialogue box (changes pending).
-
-Choose from one of the save options:<br/>Save + Exit - changes saved and exits the add-on. Exit and restart Kodi for the changes to take effect. Do not make further changes until Kodi is restarted.<br/>Save + Reload - changes saved and exits the add-on. Kodi profile reloads (and changes to favourites). Do not make further changes until the profile reloads.
+Click on the 'Close' button to exit the user interface (changes pending). Follow the exit and save option dialogue boxes.<br/><br/>Choose from one of the exit options:<br/><br/>Exit Only - no changes saved and exits. Favourites remain in the original order.<br/><br/>Save Changes - save options dialogue box (changes pending).<br/><br/><br/>Choose from one of the save options:<br/><br/>Save + Exit - changes saved and exits the add-on. Exit and restart Kodi for the changes to take effect. Do not make further changes until Kodi is restarted.<br/><br/>Save + Reload - changes saved and exits the add-on. Kodi profile reloads (and changes to favourites). Do not make further changes until the profile reloads.
 
 
 # Notes
