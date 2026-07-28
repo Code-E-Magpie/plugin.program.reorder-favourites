@@ -10,7 +10,7 @@ Open the add-on to access the menu.
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/menu.png)
 
-Click on 'U s e r&nbsp;&nbsp;&nbsp;I n t e r f a c e' to open the user interface.
+Click on 'User Interface >' to open the user interface.
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/interface.png)
 
@@ -20,15 +20,12 @@ Then click on the favourite where it needs to go and it will move.
 
 Multiple changes can be made to different favourites or an individual favourite. ('Start Again' can be used to cancel changes made in error without exiting the user interface and add-on. Favourites reload in the original order).
 
-Click on the 'Close' button to return to the menu.
+Click on the 'Close' button to exit the user interface (changes pending). Follow the exit and save option dialogue boxes.
 
-Choose from one of the three menu options:
+Choose from one of the exit options:<br/>Exit Only - no changes saved and exits. Favourites remain in the original order.
+<br/>Save Changes - save options dialogue box (changes pending).
 
-Exit Only - no changes saved and exits the add-on. Favourites remain in the original order.
-
-Save + Exit - changes saved and exits the add-on. Exit and restart Kodi for the changes to take effect. Do not make further changes until Kodi is restarted.
-
-Save + Reload - changes saved and exits the add-on. Kodi profile reloads (and changes to favourites). Do not make further changes until the profile reloads.
+Choose from one of the save options:<br/>Save + Exit - changes saved and exits the add-on. Exit and restart Kodi for the changes to take effect. Do not make further changes until Kodi is restarted.<br/>Save + Reload - changes saved and exits the add-on. Kodi profile reloads (and changes to favourites). Do not make further changes until the profile reloads.
 
 
 # Notes
@@ -39,6 +36,33 @@ Up to two lines of fixed text displayed below an image (from start of favourite 
 Up to three lines of scrolling text displayed when the cursor is on an image (from start to end of favourite text).
 
 'Save + Reload' may crash Kodi if there is a large number of favourites (i.e. large favourites.xml file). Profile reload automatically runs Kodi startup.
+
+
+# Reorder Favourites SE for Kodi
+
+![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/icon_se.png)
+
+Reorder Favourites SE (Special Edition) is the legacy version of Reorder Favourites (version 1.6.0) available from the Magpie Repository (GitHub / Kodi).
+
+Reorder Favourites SE uses the same user interface as Reorder Favourites.<br/>Presentation of the exit and save options differ.<br/>Reorder Favourites SE uses the menu instead of dialogue boxes (see User Pathways below).
+
+![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/menu_se.png)
+
+Follow the instructions above up to and including click on the 'Close' button. Then choose an option from the menu.
+
+Choose from one of the three menu options:
+
+Exit Only - no changes saved and exits the add-on. Favourites remain in the original order.
+
+Save + Exit - changes saved and exits the add-on. Exit and restart Kodi for the changes to take effect. Do not make further changes until Kodi is restarted.
+
+Save + Reload - changes saved and exits the add-on. Kodi profile reloads (and changes to favourites). Do not make further changes until the profile reloads.
+
+
+# User Pathways
+Reorder Favourites:<br/>open add-on > menu > user interface > make changes > close > follow dialogue boxes > exit
+
+Reorder Favourites SE:<br/>open add-on > menu > user interface > make changes > close > menu > choose option > exit
 
 
 # Development environment
