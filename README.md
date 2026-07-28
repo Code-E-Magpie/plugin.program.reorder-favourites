@@ -39,7 +39,7 @@ Up to three lines of scrolling text displayed when the cursor is on an image (fr
 
 Reorder Favourites SE (Special Edition) is the legacy version of Reorder Favourites (version 1.6.0) available from the Magpie Repository (GitHub / Kodi).
 
-Reorder Favourites SE uses the same user interface as Reorder Favourites.<br/>Presentation of the exit and save options differ.<br/>Reorder Favourites SE uses the menu instead of dialogue boxes (see User Pathways below).
+Reorder Favourites SE uses the same user interface as Reorder Favourites.<br/>Presentation of the exit and save options differ.<br/>Reorder Favourites SE uses the menu instead of dialogue boxes (see 'User pathways' below).
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/menu_se.png)
 
@@ -54,7 +54,7 @@ Save + Exit - changes saved and exits the add-on. Exit and restart Kodi for the 
 Save + Reload - changes saved and exits the add-on. Kodi profile reloads (and changes to favourites). Do not make further changes until the profile reloads.
 
 
-# User Pathways
+# User pathways
 Reorder Favourites:<br/>open add-on > menu > user interface > make changes > close > follow dialogue boxes > exit
 
 Reorder Favourites SE:<br/>open add-on > menu > user interface > make changes > close > menu > choose option > exit
