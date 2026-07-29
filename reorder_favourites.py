@@ -76,14 +76,6 @@ Log_Title = ('[COLOR %s]%s [/COLOR]' % (TEXT_ADDON, ADDON_NAME))
 def Log(msg, level = xbmc.LOGDEBUG):
 	xbmc.log(msg, level = level)
 
-#####################################################################################
-
-# ============================================================
-# ------------------------------------------------------------
-# User Information
-# ------------------------------------------------------------
-# ============================================================
-
 # ============================================================
 # FUNCTION: TextBox
 # ============================================================
@@ -133,6 +125,14 @@ def TextBox(title, msg):
 	textbox = TextBoxes("Textbox.xml", ADDON.getAddonInfo('path'), 'default')
 	textbox.doModal()
 	del textbox
+
+#####################################################################################
+
+# ============================================================
+# ------------------------------------------------------------
+# User Information
+# ------------------------------------------------------------
+# ============================================================
 
 # ============================================================
 # FUNCTION: Development_Information
@@ -332,7 +332,6 @@ class ReorderFavourites(xbmcgui.WindowXMLDialog):
 
 	def startAgain(self):
 
-		# Reload favourites in the original order.
 		if Dialogue.yesno(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Start Again)[/LIGHT][CR]Start again ?[CR][COLOR %s]Any changes will be lost.[CR]Favourites will be reloaded in the original order.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_DIM), yeslabel = ('[COLOR %s]Start Again[/COLOR]' % TEXT_VALUE), nolabel = ('[COLOR %s]Cancel[/COLOR]' % TEXT_HIGHLIGHT)):
 
 			self.indexFrom = None
