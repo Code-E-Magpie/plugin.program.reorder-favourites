@@ -332,7 +332,7 @@ class ReorderFavourites(xbmcgui.WindowXMLDialog):
 
 	def startAgain(self):
 
-		if Dialogue.yesno(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Start Again)[/LIGHT][CR]Start again ?[CR][COLOR %s]Any changes will be lost.[CR]Favourites will be reloaded in the original order.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_DIM), yeslabel = ('[COLOR %s]Start Again[/COLOR]' % TEXT_VALUE), nolabel = ('[COLOR %s]Cancel[/COLOR]' % TEXT_HIGHLIGHT)):
+		if Dialogue.yesno(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Start Again)[CR][COLOR %s]Changes will be lost.[CR]Favourites will reload in the original order.[/LIGHT][/COLOR][CR]Start again ?[/COLOR]' % (TEXT_GENERAL, TEXT_ITEM), yeslabel = ('[COLOR %s]Start Again[/COLOR]' % TEXT_VALUE), nolabel = ('[COLOR %s]Cancel[/COLOR]' % TEXT_HIGHLIGHT)):
 
 			self.indexFrom = None
 			self.allItems = sorted(self.allItems, key = lambda listitem: int(listitem.getProperty('index')))
@@ -484,9 +484,9 @@ def Reorder_Favourites():
 		Window_Property_Clear(FAVOURITES_RESULT)
 
 	finally:
-		if Dialogue.yesno(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Exit Options)[/LIGHT][CR]Save changes ?[CR][COLOR %s] > Save Changes: Save Options for pending changes.[CR] > Exit Only: Changes will be lost.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_DIM), yeslabel = ('[COLOR %s]Save Changes[/COLOR]' % TEXT_VALUE), nolabel = ('[COLOR %s]Exit Only[/COLOR]' % TEXT_HIGHLIGHT)):
+		if Dialogue.yesno(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Exit Options)[CR][COLOR %s] > Save Changes: Save Options for pending changes.[CR] > Exit Only: Changes will be lost.[/LIGHT][/COLOR][CR]Save changes ?[/COLOR]' % (TEXT_GENERAL, TEXT_ITEM), yeslabel = ('[COLOR %s]Save Changes[/COLOR]' % TEXT_VALUE), nolabel = ('[COLOR %s]Exit Only[/COLOR]' % TEXT_HIGHLIGHT)):
 
-			if Dialogue.yesno(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Save Options)[/LIGHT][CR]Save + Reload or Save + Exit ?[CR][COLOR %s] > Save + Reload: Changes saved and profile reloads.[CR] > Save + Exit: Changes saved and restart required.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_DIM), yeslabel = ('[COLOR %s]Save + Reload[/COLOR]' % TEXT_VALUE), nolabel = ('[COLOR %s]Save + Exit[/COLOR]' % TEXT_HIGHLIGHT)):
+			if Dialogue.yesno(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Save Options)[CR][COLOR %s] > Save + Reload: Changes saved and profile reloads.[CR] > Save + Exit: Changes saved and restart required.[/LIGHT][/COLOR][CR]Save + Reload or Save + Exit ?[/COLOR]' % (TEXT_GENERAL, TEXT_ITEM), yeslabel = ('[COLOR %s]Save + Reload[/COLOR]' % TEXT_VALUE), nolabel = ('[COLOR %s]Save + Exit[/COLOR]' % TEXT_HIGHLIGHT)):
 				
 				Save_Reload()
 
@@ -507,7 +507,7 @@ def Save_Exit():
 	try:
 		if Save_Favourites(Window_Property_Get(FAVOURITES_RESULT)):
 			Window_Property_Clear(FAVOURITES_RESULT)
-			Dialogue.ok(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Save + Exit)[/LIGHT][CR]Changes to favourites saved.[CR][COLOR %s]Exit and restart Kodi for the changes to take effect.[CR]Do not make further changes until Kodi is restarted.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_VALUE))
+			Dialogue.ok(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Save + Exit)[CR][COLOR %s]Changes to favourites saved.[CR]Exit and restart Kodi for the changes to take effect.[/LIGHT][/COLOR][CR]Do not make further changes until Kodi is restarted.[/COLOR]' % (TEXT_GENERAL, TEXT_ITEM))
 		xbmc.executebuiltin('Action(Back)')
 
 	except Exception as e:
@@ -528,7 +528,7 @@ def Save_Reload():
 		else:
 			Window_Property_Clear(FAVOURITES_RESULT)
 
-			Dialogue.ok(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Save + Reload)[/LIGHT][CR]Changes to favourites saved.[CR][COLOR %s]Current Kodi profile will reload (and changes to favourites).[CR]Do not make further changes until the profile has reloaded.[/COLOR][/COLOR]' % (TEXT_GENERAL, TEXT_VALUE))
+			Dialogue.ok(Addon_Title, '[COLOR %s]Reorder Favourites: [LIGHT](Save + Reload)[CR][COLOR %s]Changes to favourites saved.[CR]Current Kodi profile will reload (and changes to favourites).[/LIGHT][/COLOR][CR]Do not make further changes until the profile has reloaded.[/COLOR]' % (TEXT_GENERAL, TEXT_ITEM))
 			xbmc.executebuiltin('LoadProfile(%s)' % xbmc.getInfoLabel('System.ProfileName'))
 
 	except Exception as e:
