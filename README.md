@@ -78,16 +78,6 @@ Reorder Favourites functionality is simple and easy to use and will remain so.
 Reorder Favourites will be maintained for new releases of Kodi and changes to Python where possible.
 
 
-# Can you help ?
-There is a slight niggle with some thumbnails.
-
-Reorder Favourites displays a default X image where a thumbnail is unavailable. Thumbnail availability appears to be dependent on the add-on it is sourced from.
-
-Rumble and iPlayer WWW add-ons work fine but viwX doesn't. The viwX thumbnails display in Kodi favourites but are unavailable to the Reorder Favourites interface.
-
-Please contact me if you can help in resolving this or explain why (Kodi logs may help).
-
-
 # IMPORTANT
 Distribution of this add-on is NOT permitted.
 This add-on is exclusively distributed via the Magpie Repository and / or Code-E-Magpie on GitHub.
