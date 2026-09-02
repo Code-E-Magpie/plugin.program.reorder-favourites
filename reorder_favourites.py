@@ -18,20 +18,7 @@
 # ============================================================
 
 import xbmc, xbmcaddon, xbmcgui, xbmcplugin, xbmcvfs
-import math, os, re, sys
-
-try:
-
-	# Python 2.x
-	from HTMLParser import HTMLParser
-	PARSER = HTMLParser()
-	DECODE_STRING = lambda val: val.decode('utf-8')
-except ImportError as e:
-
-	# Python 3.4+ (see https://stackoverflow.com/a/2360639)
-	import html
-	PARSER = html
-	DECODE_STRING = lambda val: val # Pass-through.
+import html, math, os, re, sys
 
 # ============================================================
 # Variables
@@ -169,11 +156,11 @@ INSTRUCTIONS_TEXT = '%s[CR][CR]Open the add-on to access the menu.[CR]Click on \
 
 NOTES_TEXT = '[CR][CR][CR]%s[CR][CR]Default X image displayed where thumbnail is unavailable.[CR]Up to two lines of fixed text displayed below an image (from start of favourite text).[CR]Up to three lines of scrolling text displayed when the cursor is on an image (from start to end of favourite text).[CR]\'Save + Reload\' may crash Kodi if there is a large number of favourites (i.e. large favourites.xml file). Profile reload automatically runs Kodi startup.' % ' '.join('NOTES')
 
-SETTINGS_TEXT = '[CR][CR][CR]%s[CR][CR]Click on \'Reorder Favourites SE Settings >\' to open the user settings.[CR]Customise text colours with billions of text colour combinations[CR][CR]Choose from 140 colours for each one (there is also a none option):[CR]TEXT_ADDON = header (menu, logs and text boxes)[CR]TEXT_DARK = menu, logs and text boxes[CR]TEXT_DIM = menu[CR]TEXT_GENERAL = main text (menu, logs, text boxes and buttons)[CR]TEXT_HIGHLIGHT = logs and text boxes[CR]TEXT_ITEM = text boxes[CR]TEXT_VALUE = text boxes[CR][CR]Press the OK button in settings to save any changes made and after resetting a category to default. Restart the add-on to see the changes.' % ' '.join('SETTINGS')
+SETTINGS_TEXT = '[CR][CR][CR]%s[CR][CR]Press the OK button in settings to save any changes made and after resetting a category to default.[CR]Some changes may require restarting the add-on.[CR][CR]Customise text colours with billions of text colour combinations[CR][CR]Choose from 140 colours for each one (there is also a none option):[CR]Text Add-on Colour: header (menu, notifications, logs and text boxes)[CR]Text Dark Colour: logs and text boxes[CR]Text Dim Colour: menu[CR]Text General Colour: main text (notifications, logs, text boxes and close button)[CR]Text Highlight Colour: values on menu requiring attention and logs[CR]Text Item Colour: items on menu and text boxes[CR]Text Value Colour: values on menu and text boxes' % ' '.join('SETTINGS')
 
-ENVIRONMENT_TEXT = '%s[CR][CR]Kodi v21.3 Omega apk (Android app) with Confluence skin as default (including default font).[CR]Tablet (1340 x 800 aspect ratio 5:3) running Android 14 using QuickEdit apk (TryItAndSee / LearnAsYouGo iterative development and testing).[CR]Chromecast HD (1280 x 720 aspect ratio 16:9) running Android TV OS version 14 (user testing).[CR]100%% tested and working on Android.[CR]Not tested on other platforms.[CR]Code debugged and reengineered using https://aipy.dev/tools where required (pre 1.6.0).[CR]Code debugged and reengineered using https://stackoverflow.com/ai-assist (1.6.0 onwards).' % ' '.join('DEVELOPMENT ENVIRONMENT')
+ENVIRONMENT_TEXT = '[CR][CR][CR]%s[CR][CR]Kodi v21.3 Omega apk (Android app) with Confluence skin as default (including default font).[CR]Tablet (1340 x 800 aspect ratio 5:3) running Android 14 using QuickEdit apk (TryItAndSee / LearnAsYouGo iterative development and testing).[CR]Chromecast HD (1280 x 720 aspect ratio 16:9) running Android TV OS version 14 (user testing).[CR]100%% tested and working on Android.[CR]Not tested on other platforms.[CR]Code debugged and reengineered using https://aipy.dev/tools where required (pre 1.6.0).[CR]Code debugged and reengineered using https://stackoverflow.com/ai-assist (1.6.0 onwards).' % ' '.join('DEVELOPMENT ENVIRONMENT')
 
-CHANGELOG_TEXT = '[CR][CR][CR]%s [LIGHT] (newest at the top)[/LIGHT][CR][CR]Version code x.y.z attributes (1.5.0 onwards)[CR]x = major change / y = number of \'>\' menu items / z = minor change[CR][CR]version 1.6.1 (6 menu items & 2 user interface buttons)[CR]- settings reworked to avoid clashes (different names to variables etc.)[CR][CR]version 1.6.0 (6 menu items & 2 user interface buttons)[CR]- settings created to customise text colours with billions of text colour combinations[CR]- text colour customisation includes text boxes and user interface buttons[CR]- added favourite and interface row count to user interface header[CR]- added dummy button containing full favourite text to user interface[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR]- minor changes to function names to improve consistency with other add-ons[CR]- logs reworked[CR][CR]version 1.5.1 (5 menu items & 2 user interface buttons)[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR][CR]version 1.5.0 (5 menu items & 2 user interface buttons)[CR]- Textbox.xml background image name change[CR]- minor changes to improve consistency with other add-ons[CR][CR]version 1.2.4 (4 menu items for user interface & 2 user interface buttons)[CR]- menu updated with User Information dialogue box (Instructions / Notes / Development / Changelog)[CR]- menu updated with Developer, Name, Version and Addon ID[CR]- user interface ids in xml renumbered[CR]- user interface remote scrolling within borders[CR]- user interface images and layout improved[CR]- variables and functions reworked[CR]- dialogue boxes and logs reworked[CR]- simplified addon.xml content to reduce maintenance[CR][CR]version 1.0.0 (4 menu items for user interface & 2 user interface buttons)[CR]- code from Order Favourites 1.2.3a by doko-desuka (plugin.program.orderfavourites)[CR]- user interface resized to full screen[CR]- improved layout using new images and default image[CR]- visible scrollbar and resized text[CR]- menu and dialogue boxes reworked[CR]- user instructions added to addon.xml[CR]- icon.png changed and fanart.jpg added' % ' '.join('CHANGELOG')
+CHANGELOG_TEXT = '[CR][CR][CR]%s [LIGHT] (newest at the top)[/LIGHT][CR][CR]Version code x.y.z attributes (1.5.0 onwards)[CR]x = major change / y = number of \'>\' menu items / z = minor change[CR][CR]version 1.6.1 (6 menu items & 2 user interface buttons)[CR]- import simplified to python 3.4+[CR]- settings reworked to avoid clashes (different names to variables etc.)[CR][CR]version 1.6.0 (6 menu items & 2 user interface buttons)[CR]- settings created to customise text colours with billions of text colour combinations[CR]- text colour customisation includes text boxes and user interface buttons[CR]- added favourite and interface row count to user interface header[CR]- added dummy button containing full favourite text to user interface[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR]- minor changes to function names to improve consistency with other add-ons[CR]- logs reworked[CR][CR]version 1.5.1 (5 menu items & 2 user interface buttons)[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR][CR]version 1.5.0 (5 menu items & 2 user interface buttons)[CR]- Textbox.xml background image name change[CR]- minor changes to improve consistency with other add-ons[CR][CR]version 1.2.4 (4 menu items for user interface & 2 user interface buttons)[CR]- menu updated with User Information dialogue box (Instructions / Notes / Development / Changelog)[CR]- menu updated with Developer, Name, Version and Addon ID[CR]- user interface ids in xml renumbered[CR]- user interface remote scrolling within borders[CR]- user interface images and layout improved[CR]- variables and functions reworked[CR]- dialogue boxes and logs reworked[CR]- simplified addon.xml content to reduce maintenance[CR][CR]version 1.0.0 (4 menu items for user interface & 2 user interface buttons)[CR]- code from Order Favourites 1.2.3a by doko-desuka (plugin.program.orderfavourites)[CR]- user interface resized to full screen[CR]- improved layout using new images and default image[CR]- visible scrollbar and resized text[CR]- menu and dialogue boxes reworked[CR]- user instructions added to addon.xml[CR]- icon.png changed and fanart.jpg added' % ' '.join('CHANGELOG')
 
 User_Information_Text = '[COLOR %s][B]%s[/B][CR][COLOR %s][LIGHT](Instructions / Notes / Settings / Development Environment / Changelog)[/LIGHT][/COLOR][/COLOR][CR][CR][COLOR %s]%s[/COLOR]' % (TEXT_ITEM, ' '.join('USER INFORMATION'), TEXT_VALUE, TEXT_GENERAL, (INSTRUCTIONS_TEXT + NOTES_TEXT + SETTINGS_TEXT + ENVIRONMENT_TEXT + CHANGELOG_TEXT))
 
@@ -203,11 +190,7 @@ class ReorderFavourites(xbmcgui.WindowXMLDialog):
 		xbmcgui.WindowXMLDialog.__init__(self, *args, **kwargs)
 
 		# Map control IDs to custom handler methods. IDs in /resources/skins/default/1080i/ReorderFavourites.xml
-		self.idHandlerDict = {
-			8320: self.doSelect,
-			8500: self.close,
-			8501: self.startAgain,
-		}
+		self.idHandlerDict = {8320: self.doSelect, 8500: self.close, 8501: self.startAgain,}
 
 		# Map action IDs to custom handler methods.
 		# See https://github.com/xbmc/xbmc/blob/master/xbmc/input/actions/ActionIDs.h
@@ -379,8 +362,11 @@ def Count_Favourites(file_path):
 # ============================================================
 
 def Data_Generator_Favourites():
+	
+	decode_string = lambda val: val
+
 	file = xbmcvfs.File(FAVOURITES_FILE)
-	contents = DECODE_STRING(file.read())
+	contents = decode_string(file.read())
 	file.close()
 
 	namePattern = re.compile('name="([^"]+)')
@@ -390,12 +376,12 @@ def Data_Generator_Favourites():
 		entry = entryMatch.group(1)
 
 		match = namePattern.search(entry)
-		name = PARSER.unescape(match.group(1)) if match else ''
+		name = html.unescape(match.group(1)) if match else ''
 
 		match = thumbPattern.search(entry)
 
 		if match:
-			thumb = PARSER.unescape(match.group(1))
+			thumb = html.unescape(match.group(1))
 			cacheFilename = xbmc.getCacheThumbName(thumb)
 
 			if 'ffffffff' not in cacheFilename:
@@ -425,7 +411,7 @@ def Save_Favourites(xmlText):
 		file.close()
 
 	except Exception as e:
-		Log(Log_Title + Favourites + 'Save Favourites: exception[CR]%s' % str(e), xbmc.LOGERROR)
+		Log(Log_Title + Favourites + 'Save Favourites: %s' % str(e), xbmc.LOGERROR)
 
 	return True
 
@@ -464,7 +450,6 @@ def Window_Property_Set(prop, data):
 if '/Addon_Header' in PLUGIN_URL:
 	ADDON.openSettings()
 
-
 elif '/User_Interface' in PLUGIN_URL:
 	Log(Log_Title + Interface + '[COLOR %s][LIGHT]Open[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
 	User_Interface = ReorderFavourites('ReorderFavourites.xml', ADDON.getAddonInfo('path'), 'default', '1080i')
@@ -474,7 +459,7 @@ elif '/User_Interface' in PLUGIN_URL:
 		Window_Property_Set(FAVOURITES_RESULT, result)
 
 	except Exception as e:
-		Log(Log_Title + Menu + 'User Interface: exception[CR]%s' % str(e), xbmc.LOGERROR)
+		Log(Log_Title + Menu + 'User Interface: %s' % str(e), xbmc.LOGERROR)
 
 		Window_Property_Clear(FAVOURITES_RESULT)
 
@@ -482,12 +467,10 @@ elif '/User_Interface' in PLUGIN_URL:
 		del User_Interface
 		Log(Log_Title + Interface + '[COLOR %s][LIGHT]Close[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
 
-
 elif '/Exit_Only' in PLUGIN_URL:
 	Window_Property_Clear(FAVOURITES_RESULT)
 	xbmc.executebuiltin('Action(Back)')
 	Log(Log_Title + Menu + '[COLOR %s][LIGHT]Finished (Exit Only)[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
-
 
 elif '/Save_Exit' in PLUGIN_URL:
 
@@ -498,10 +481,9 @@ elif '/Save_Exit' in PLUGIN_URL:
 		xbmc.executebuiltin('Action(Back)')
 
 	except Exception as e:
-		Log(Log_Title + Menu + 'Save + Exit: exception[CR]%s' % str(e), xbmc.LOGERROR)
+		Log(Log_Title + Menu + 'Save + Exit: %s' % str(e), xbmc.LOGERROR)
 
 	Log(Log_Title + Menu + '[COLOR %s][LIGHT]Finished (Save + Exit)[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
-
 
 elif '/Save_Reload' in PLUGIN_URL:
 
@@ -515,14 +497,12 @@ elif '/Save_Reload' in PLUGIN_URL:
 			xbmc.executebuiltin('LoadProfile(%s)' % xbmc.getInfoLabel('System.ProfileName'))
 
 	except Exception as e:
-		Log(Log_Title + Menu + 'Save + Reload: exception[CR]%s' % str(e), xbmc.LOGERROR)
+		Log(Log_Title + Menu + 'Save + Reload: %s' % str(e), xbmc.LOGERROR)
 
 	Log(Log_Title + Menu + '[COLOR %s][LIGHT]Finished (Save + Reload)[/LIGHT][/COLOR]' % TEXT_DARK, xbmc.LOGINFO)
 
-
 elif '/User_Information' in PLUGIN_URL:
 	User_Information()
-
 
 else:
 	# Create the menu items.
