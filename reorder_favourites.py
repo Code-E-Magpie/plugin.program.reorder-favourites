@@ -1,11 +1,5 @@
 # ============================================================
-#################################
 # reorder_favourites.py by Code-E-Magpie
-#################################
-# ============================================================
-
-# ============================================================
-# File information
 # ============================================================
 
 # sourced from: plugin.program.orderfavourites > default.py (1.2.3a by doko-desuka)
@@ -20,20 +14,18 @@
 import xbmc, xbmcaddon, xbmcgui, xbmcplugin, xbmcvfs
 import html, math, os, re, sys
 
-import xml.etree.ElementTree as ET
-
 # ============================================================
 # Variables
 # ============================================================
 
-ADDON_ID = xbmcaddon.Addon().getAddonInfo('id') # id in addons.xml
+ADDON_ID = xbmcaddon.Addon().getAddonInfo('id')
 ADDON = xbmcaddon.Addon(ADDON_ID)
-ADDON_DEVELOPER = ADDON.getAddonInfo('author') # provider-name in addons.xml (developer)
+ADDON_AUTHOR = ADDON.getAddonInfo('author')
 ADDON_FANART = ADDON.getAddonInfo('fanart')
 ADDON_ICON = ADDON.getAddonInfo('icon')
-ADDON_NAME = ADDON.getAddonInfo('name') # name in addons.xml
-ADDON_VERSION = ADDON.getAddonInfo('version') # version in addons.xml
-FAVOURITES = os.path.join(xbmcvfs.translatePath('special://userdata/'), 'favourites.xml') # count
+ADDON_NAME = ADDON.getAddonInfo('name')
+ADDON_VERSION = ADDON.getAddonInfo('version')
+FAVOURITES = os.path.join(xbmcvfs.translatePath('special://userdata/'), 'favourites.xml')
 FAVOURITES_RESULT = 'ordfav.result'
 PLUGIN_ID = int(sys.argv[1])
 PLUGIN_URL = sys.argv[0]
@@ -117,22 +109,16 @@ def TextBox(title, text):
 #####################################################################################
 
 # ============================================================
-# ------------------------------------------------------------
-# User Information
-# ------------------------------------------------------------
-# ============================================================
-
-# ============================================================
 # FUNCTION: Development_Information
 # ============================================================
 
-MAGPIE_TEXT = '%s[CR][CR]The official repository of %s add-ons.[CR]Distribution of the Magpie Repository is permitted.[CR][CR][COLOR silver]IMPORTANT:[CR]Distribution of %s add-ons are NOT permitted.[CR]%s add-ons are exclusively distributed via the Magpie Repository and / or %s on GitHub.[CR]The code and files of these add-ons are free for use, subject to crediting %s.[CR][CR][COLOR %s]Available on GitHub only.[CR]https://github.com/Code-E-Magpie/repository.magpie[CR][CR]To install Magpie Repository:[CR]Add the Kodi source https://Code-E-Magpie.github.io/repository.magpie/[CR]Use the \'Install from zip file\' method to install the Magpie Repository.[/COLOR]' % (' '.join('MAGPIE REPOSITORY'), ADDON_DEVELOPER, ADDON_DEVELOPER, ADDON_DEVELOPER, ADDON_DEVELOPER, ADDON_DEVELOPER, TEXT_DARK)
-
-DATABASE_TEXT = '[CR][CR][CR]%s[CR][CR]Database Toolbox with easy to use database maintenance tools.[CR][CR][COLOR %s]Add-on available from Magpie Repository. Further details on GitHub and within the add-on itself.[CR]https://github.com/Code-E-Magpie/plugin.program.database-toolbox[/COLOR]' % (' '.join('DATABASE TOOLBOX'), TEXT_DARK)
+MAGPIE_TEXT = '%s[CR][CR]The official repository of %s add-ons.[CR]Distribution of the Magpie Repository is permitted.[CR][CR]IMPORTANT:[CR]Distribution of %s add-ons are NOT permitted.[CR]%s add-ons are exclusively distributed via the Magpie Repository and / or %s on GitHub.[CR]The code and files of these add-ons are free for use, subject to crediting %s.[CR][CR][COLOR %s]Available on GitHub only.[CR]https://github.com/Code-E-Magpie/repository.magpie[CR][CR]To install Magpie Repository:[CR]Add the Kodi source https://Code-E-Magpie.github.io/repository.magpie/[CR]Use the \'Install from zip file\' method to install the Magpie Repository.[/COLOR]' % (' '.join('MAGPIE REPOSITORY'), ADDON_AUTHOR, ADDON_AUTHOR, ADDON_AUTHOR, ADDON_AUTHOR, ADDON_AUTHOR, TEXT_DARK)
 
 MAINTENANCE_TEXT = '[CR][CR][CR]%s[CR][CR]Maintenance Toolbox with easy to read Kodi information (system, add-ons, network and internet).[CR]Clear cache + folders, surplus add-ons, temp folder and thumbnails.[CR]View logs and errors (new and old).[CR]Check repositories, sources and internet speed (Speedtest by Ookla).[CR]Backup and restore favourites, sources, logs, userdata, add-ons, add-on data etc.[CR][CR][COLOR %s]Add-on available from Magpie Repository. Further details on GitHub and within the add-on itself.[CR]https://github.com/Code-E-Magpie/plugin.program.maintenance-toolbox[/COLOR]' % (' '.join('MAINTENANCE TOOLBOX'), TEXT_DARK)
 
-REORDER_TEXT = '[CR][CR][CR]%s[CR][CR]Easy to use reordering of favourites for Kodi.[CR][CR][COLOR %s]Add-on available from Magpie Repository. Further details on GitHub and within the add-on itself.[CR]https://github.com/Code-E-Magpie/plugin.program.reorder-favourites[/COLOR]' % (' '.join('REORDER FAVOURITES'), TEXT_DARK)
+REORDER_TEXT = '[CR][CR][CR]%s[CR][CR]Easy to use reordering of favourites for Kodi using dialogue boxes to exit and save.[CR][CR][COLOR %s]Add-on available from Magpie Repository. Further details on GitHub and within the add-on itself.[CR]https://github.com/Code-E-Magpie/plugin.program.reorder-favourites[/COLOR]' % (' '.join('REORDER FAVOURITES'), TEXT_DARK)
+
+REORDER_SE_TEXT = '[CR][CR][CR]%s[CR][CR]Easy to use reordering of favourites for Kodi using the menu to exit and save. Legacy version of Reorder Favourites.[CR][CR][COLOR %s]Add-on available from Magpie Repository. Further details on GitHub and within the add-on itself.[CR]https://github.com/Code-E-Magpie/plugin.program.reorder-favourites[/COLOR]' % (' '.join('REORDER FAVOURITES SE'), TEXT_DARK)
 
 LOG_TEXT = '[CR][CR][CR]%s[CR][CR]System Log Toolbox easy to use system log viewer.[CR][CR][COLOR %s]Add-on available from Magpie Repository. Further details on GitHub and within the add-on itself.[CR]https://github.com/Code-E-Magpie/plugin.program.system-log-toolbox[/COLOR]' % (' '.join('SYSTEM LOG TOOLBOX'), TEXT_DARK)
 
@@ -140,7 +126,7 @@ SPECIAL_TEXT = '[CR][CR][CR]%s[CR][CR]Special Favourites: Kodi special paths and
 
 TEMPLATE_TEXT = '[CR][CR][CR]%s[CR][CR]Created to illustrate a GitHub repository with a simple folder structure linked to a Kodi repository.[CR][CR][COLOR %s]Available on GitHub only.[CR]https://github.com/Code-E-Magpie/repository.template[/COLOR][CR][CR]Alternatively a GitHub repository linked to a Kodi source, without using a Kodi repository.[CR][CR][COLOR %s]Available on GitHub only.[CR]https://github.com/Code-E-Magpie/repository.simple[/COLOR]' % (' '.join('TEMPLATE REPOSITORY'), TEXT_DARK, TEXT_DARK)
 
-Development_Text = '[CR][CR][CR][COLOR %s][B]%s[/B][CR][COLOR %s][LIGHT](Magpie Repository / Database Toolbox / Maintenance Toolbox / Reorder Favourites / System Log Toolbox / Favourites & Sources / Template Repository)[/LIGHT][/COLOR][/COLOR][CR][CR][COLOR %s]%s[/COLOR]' % (TEXT_ITEM, ' '.join('Code-E-Magpie Development'), TEXT_VALUE, TEXT_GENERAL, (MAGPIE_TEXT + DATABASE_TEXT + MAINTENANCE_TEXT + REORDER_TEXT + LOG_TEXT + SPECIAL_TEXT + TEMPLATE_TEXT))
+Development_Text = '[CR][CR][CR][COLOR %s][B]%s[/B][CR][COLOR %s][LIGHT](Magpie Repository / Maintenance Toolbox / Reorder Favourites / Reorder Favourites SE / System Log Toolbox / Favourites & Sources / Template Repository)[/LIGHT][/COLOR][/COLOR][CR][CR][COLOR %s]%s[/COLOR]' % (TEXT_ITEM, ' '.join('Code-E-Magpie Development'), TEXT_VALUE, TEXT_GENERAL, (MAGPIE_TEXT + MAINTENANCE_TEXT + REORDER_TEXT + REORDER_SE_TEXT + LOG_TEXT + SPECIAL_TEXT + TEMPLATE_TEXT))
 
 # ============================================================
 # FUNCTION: User_Information
@@ -154,7 +140,7 @@ SETTINGS_TEXT = '[CR][CR][CR]%s[CR][CR]Press the OK button in settings to save a
 
 ENVIRONMENT_TEXT = '[CR][CR][CR]%s[CR][CR]Kodi v21.3 Omega apk (Android app) with Confluence skin as default (including default font).[CR]Tablet (1340 x 800 aspect ratio 5:3) running Android 14 using QuickEdit apk (TryItAndSee / LearnAsYouGo iterative development and testing).[CR]Chromecast HD (1280 x 720 aspect ratio 16:9) running Android TV OS version 14 (user testing).[CR]100%% tested and working on Android.[CR]Not tested on other platforms.[CR]Code debugged and reengineered using https://aipy.dev/tools where required (pre 1.6.0).[CR]Code debugged and reengineered using https://stackoverflow.com/ai-assist (1.6.0 onwards).' % ' '.join('DEVELOPMENT ENVIRONMENT')
 
-CHANGELOG_TEXT = '[CR][CR][CR]%s [LIGHT] (newest at the top)[/LIGHT][CR][CR]Version code x.y.z attributes (1.5.0 onwards)[CR]x = major change / y = number of \'>\' menu items / z = minor change[CR][CR]version 2.4.1 (4 menu items & 2 user interface buttons)[CR]- settings reworked to avoid clashes (different names to variables etc.)[CR]- minor changes to ReorderFavourites.xml and TextBox.xml to improve performance and consistency with other add-ons[CR]- minor changes to Log and TextBox functions to improve consistency with other add-ons[CR][CR]version 2.4.0 (4 menu items & 2 user interface buttons)[CR]- save and exit options removed from menu[CR]- save and exit options added using dialogue boxes[CR][CR]version 1.6.0 (6 menu items & 2 user interface buttons)[CR]- settings created to customise text colours with billions of text colour combinations[CR]- text colour customisation includes text boxes and user interface buttons[CR]- added favourite and interface row count to user interface header[CR]- added dummy button containing full favourite text to user interface[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR]- minor changes to function names to improve consistency with other add-ons[CR]- logs reworked[CR][CR]version 1.5.1 (5 menu items & 2 user interface buttons)[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR][CR]version 1.5.0 (5 menu items & 2 user interface buttons)[CR]- Textbox.xml background image name change[CR]- minor changes to improve consistency with other add-ons[CR][CR]version 1.2.4 (4 menu items for user interface & 2 user interface buttons)[CR]- menu updated with User Information dialogue box (Instructions / Notes / Development / Changelog)[CR]- menu updated with Developer, Name, Version and Addon ID[CR]- user interface ids in xml renumbered[CR]- user interface remote scrolling within borders[CR]- user interface images and layout improved[CR]- variables and functions reworked[CR]- dialogue boxes and logs reworked[CR]- simplified addon.xml content to reduce maintenance[CR][CR]version 1.0.0 (4 menu items for user interface & 2 user interface buttons)[CR]- code from Order Favourites 1.2.3a by doko-desuka (plugin.program.orderfavourites)[CR]- user interface resized to full screen[CR]- improved layout using new images and default image[CR]- visible scrollbar and resized text[CR]- menu and dialogue boxes reworked[CR]- user instructions added to addon.xml[CR]- icon.png changed and fanart.jpg added' % ' '.join('CHANGELOG')
+CHANGELOG_TEXT = '[CR][CR][CR]%s [LIGHT] (newest at the top)[/LIGHT][CR][CR]Version code x.y.z attributes (1.5.0 onwards)[CR]x = major change / y = number of \'>\' menu items / z = minor change[CR][CR]version 2.4.2 (4 menu items & 2 user interface buttons)[CR]- Code-E-Magpie development content amended[CR]- minor changes to improve consistency with other add-ons[CR][CR]version 2.4.1 (4 menu items & 2 user interface buttons)[CR]- settings reworked to avoid clashes (different names to variables etc.)[CR]- minor changes to ReorderFavourites.xml and TextBox.xml to improve performance and consistency with other add-ons[CR]- minor changes to Log and TextBox functions to improve consistency with other add-ons[CR][CR]version 2.4.0 (4 menu items & 2 user interface buttons)[CR]- save and exit options removed from menu[CR]- save and exit options added using dialogue boxes[CR][CR]version 1.6.0 (6 menu items & 2 user interface buttons)[CR]- settings created to customise text colours with billions of text colour combinations[CR]- text colour customisation includes text boxes and user interface buttons[CR]- added favourite and interface row count to user interface header[CR]- added dummy button containing full favourite text to user interface[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR]- minor changes to function names to improve consistency with other add-ons[CR]- logs reworked[CR][CR]version 1.5.1 (5 menu items & 2 user interface buttons)[CR]- minor changes to menu text formats to improve consistency with other add-ons[CR][CR]version 1.5.0 (5 menu items & 2 user interface buttons)[CR]- Textbox.xml background image name change[CR]- minor changes to improve consistency with other add-ons[CR][CR]version 1.2.4 (4 menu items for user interface & 2 user interface buttons)[CR]- menu updated with User Information dialogue box (Instructions / Notes / Development / Changelog)[CR]- menu updated with Developer, Name, Version and Addon ID[CR]- user interface ids in xml renumbered[CR]- user interface remote scrolling within borders[CR]- user interface images and layout improved[CR]- variables and functions reworked[CR]- dialogue boxes and logs reworked[CR]- simplified addon.xml content to reduce maintenance[CR][CR]version 1.0.0 (4 menu items for user interface & 2 user interface buttons)[CR]- code from Order Favourites 1.2.3a by doko-desuka (plugin.program.orderfavourites)[CR]- user interface resized to full screen[CR]- improved layout using new images and default image[CR]- visible scrollbar and resized text[CR]- menu and dialogue boxes reworked[CR]- user instructions added to addon.xml[CR]- icon.png changed and fanart.jpg added' % ' '.join('CHANGELOG')
 
 User_Information_Text = '[COLOR %s][B]%s[/B][CR][COLOR %s][LIGHT](Instructions / Notes / Settings / Development Environment / Changelog)[/LIGHT][/COLOR][/COLOR][CR][CR][COLOR %s]%s[/COLOR]' % (TEXT_ITEM, ' '.join('USER INFORMATION'), TEXT_VALUE, TEXT_GENERAL, (INSTRUCTIONS_TEXT + NOTES_TEXT + SETTINGS_TEXT + ENVIRONMENT_TEXT + CHANGELOG_TEXT))
 
@@ -162,12 +148,6 @@ def User_Information():
 	TextBox('[B]%s[/B][CR]%s' % (Addon_Title, Addon_ID_Version), User_Information_Text + Development_Text)
 
 ####################################################################################
-
-# ============================================================
-# ------------------------------------------------------------
-# User Interface
-# ------------------------------------------------------------
-# ============================================================
 
 # ============================================================
 # CLASS: ReorderFavourites
@@ -527,9 +507,7 @@ def Save_Reload():
 #####################################################################################
 
 # ============================================================
-# ------------------------------------------------------------
-# Entry Point
-# ------------------------------------------------------------
+# Menu Entry Point
 # ============================================================
 
 if '/Addon_Header' in PLUGIN_URL:
@@ -545,7 +523,6 @@ elif '/User_Information' in PLUGIN_URL:
 	User_Information()
 
 else:
-	# Create the menu items.
 	xbmcplugin.setContent(PLUGIN_ID, 'files')
 
 	Equals = xbmcgui.ListItem('[COLOR %s]==================================================[/COLOR]' % TEXT_DIM)
@@ -563,7 +540,7 @@ else:
 	User_Information = xbmcgui.ListItem(' '.join('User Information >'))
 	User_Information.setArt({'fanart': REORDER, 'thumb': ADDON_ICON})
 
-	Addon_Developer = xbmcgui.ListItem('[COLOR %s]Developer: [/COLOR]%s' % (TEXT_DIM, ADDON_DEVELOPER))
+	Addon_Developer = xbmcgui.ListItem('[COLOR %s]Developer: [/COLOR]%s' % (TEXT_DIM, ADDON_AUTHOR))
 	Addon_Developer.setArt({'fanart': ADDON_FANART, 'thumb': ADDON_ICON})
 
 	Addon_Name = xbmcgui.ListItem('[COLOR %s]Name: %s[/COLOR]' % (TEXT_DIM, ADDON_NAME))
@@ -575,7 +552,6 @@ else:
 	Addon_ID = xbmcgui.ListItem('[COLOR %s]Add-on ID: %s[/COLOR]' % (TEXT_DIM, ADDON_ID))
 	Addon_ID.setArt({'fanart': ADDON_FANART, 'thumb': ADDON_ICON})
 
-	# Append to PLUGIN_URL as it already ends with a slash.
 	xbmcplugin.addDirectoryItems(
 		PLUGIN_ID,
 		(
