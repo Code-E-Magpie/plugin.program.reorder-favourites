@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <settings>
+
+	<!-- Main Settings -->
+	<category label="[LIGHT]Main Settings[/LIGHT]">
+		<setting id= "MA1" type="lsep" label="[COLOR blue]LRU capacity / Visible Range / Fixed Pool[/COLOR]"/>
+		<setting id="cache_items" type="number" label="[COLOR silver]LRU capacity (store paths)[LIGHT] (default = 400)[/LIGHT][/COLOR]" enable="true" default="400"/>
+		<setting id="prefetch_window" type="number" label="[COLOR silver]Items either side of visible range[LIGHT] (default = 100)[/LIGHT][/COLOR]" enable="true" default="100"/>
+		<setting id="thread_pool" type="number" label="[COLOR silver]Small fixed pool[LIGHT] (default = 3)[/LIGHT][/COLOR]" enable="true" default="3"/>
+	</category>
 
 	<!-- Text Colours -->
 	<category label="[LIGHT]Text Colours[/LIGHT]">
