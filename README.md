@@ -37,7 +37,7 @@ Up to three lines of scrolling text displayed when the cursor is on an image (fr
 
 ![icon](https://github.com/Code-E-Magpie/plugin.program.reorder-favourites/blob/main/.screenshots/icon_se.png)
 
-Reorder Favourites SE (Special Edition) is the legacy version of Reorder Favourites (version 1.6.0) available from the Magpie Repository (GitHub / Kodi).
+Reorder Favourites SE (Special Edition) is based on the legacy version of Reorder Favourites (version 1.6.0) available from the Magpie Repository (GitHub / Kodi).
 
 Reorder Favourites SE uses the same user interface as Reorder Favourites.<br/>Presentation of the exit and save options differ.<br/>Reorder Favourites SE uses the menu instead of dialogue boxes (see 'User pathways' below).
 
@@ -69,7 +69,7 @@ Chromecast HD (1280 x 720 aspect ratio 16:9) running Android TV OS version 14 (u
 
 100% tested and working on Android.<br/>Not tested on other platforms.
 
-Code debugged and reengineered where required using https://aipy.dev/tools
+Code debugged and reengineered where required using https://stackoverflow.com/ai-assist
 
 
 # Future development
@@ -93,6 +93,8 @@ Order Favourites by doko-desuka:<br/>https://github.com/doko-desuka/plugin.progr
 Insert-Swap-Kodi-Favourites by M-Borsch:<br/>https://github.com/M-Borsch/Insert-Swap-Kodi-Favourites
 
 Manage-Kodi-Favourites by M-Borsch:<br/>https://github.com/M-Borsch/Manage-Kodi-Favourites/tree/main
+
+Flow FavManager:<br/>https://github.com/loioloio/flowfav
 
 Super Favourites by jmooremcc:<br/>https://github.com/jmooremcc/plugin.program.super.favourites
 
