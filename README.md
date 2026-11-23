@@ -94,7 +94,7 @@ Insert-Swap-Kodi-Favourites by M-Borsch:<br/>https://github.com/M-Borsch/Insert-
 
 Manage-Kodi-Favourites by M-Borsch:<br/>https://github.com/M-Borsch/Manage-Kodi-Favourites/tree/main
 
-Flow FavManager:<br/>https://github.com/loioloio/flowfav
+Flow FavManager by loioloio:<br/>https://github.com/loioloio/flowfav
 
 Super Favourites by jmooremcc:<br/>https://github.com/jmooremcc/plugin.program.super.favourites
 
